@@ -136,3 +136,9 @@ button:hover {
   transform: scale(1.05);
   box-shadow: 0 4px 0 #E30613; /* ombre rouge */
 }
+
+/* ZONE ERREURS */
+.error {
+  text-align: center;
+  color: red;
+}

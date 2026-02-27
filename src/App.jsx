@@ -31,7 +31,6 @@ function App() {
     ev.preventDefault();
     setShowForm(false)
     setId(false);
-    setJokeForm(false);
     setError('');
     try {
       const data = await getRandomJoke();
@@ -43,10 +42,13 @@ function App() {
 
   const handleIdSubmit = async (ev) => {
     ev.preventDefault();
-    setShowForm(false);
+    setJokeForm(false);
+    setShowForm(true);
     setError('');
+    setJokes([]);
     try {
       const data = await getOneJoke(id);
+      setShowForm(false);
       setJokes([data]);
     } catch (error) {
       setJokes([]);
@@ -104,7 +106,7 @@ function App() {
         <div className='responses'>
           <h2>Résultats</h2>
           <div className="res">
-            {error && <p className="error">{error}</p>}
+            {error && <p className="error">{error ? error : '\u00A0'}</p>}
             {showForm ? (
               jokeForm ? (
                 <form className='addJoke' onSubmit={handleAddSubmit}>
@@ -133,7 +135,7 @@ function App() {
                     value={id}
                     onChange={(e) => setId(Number(e.target.value))}
                   />
-                  <button type='submit'>Chercher la blague</button>
+                  <button type='submit'>Chercher la blague</button>:
                 </form>
               )   
             ):(<ul className={`jokes_list ${jokes.length === 1 ? "single": ""}`}>
@@ -146,6 +148,9 @@ function App() {
                     </li>
                   );
                 })}
+                {jokes.length === 1 && 
+                  <button onClick={handleForm}>Choisir une autre blague ?</button>
+                }
                 </ul>
               )}
           </div>
