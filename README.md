@@ -1,16 +1,32 @@
-# React + Vite
+# Carambar & Co - Mini App Blagues
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+![Node.js](https://img.shields.io/badge/Node.js-339933?style=for-the-badge&logo=node.js&logoColor=white)
+![Express](https://img.shields.io/badge/Express-000000?style=for-the-badge&logo=express&logoColor=white)
+![SQLite](https://img.shields.io/badge/SQLite-07405E?style=for-the-badge&logo=sqlite&logoColor=white)
+![Swagger](https://img.shields.io/badge/Swagger-85EA2D?style=for-the-badge&logo=swagger&logoColor=white)
 
-Currently, two official plugins are available:
+Bienvenue dans le projet **Carambar & Co**, une mini application web pour afficher des blagues aléatoires.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Cette application se compose de deux parties :  
 
-## React Compiler
+- **Frontend** : landing page avec un bouton pour afficher des blagues  
+- **Backend** : API REST pour gérer les blagues  
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+---
 
-## Expanding the ESLint configuration
+## 🔗 Liens importants
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- **Repo Backend (API)** : [https://github.com/ton-utilisateur/carambar-api](https://github.com/ton-utilisateur/carambar-api)  
+- **Documentation Swagger (API en ligne)** : [https://carambar-jokes-j6nh.onrender.com/api-docs/](https://carambar-jokes-j6nh.onrender.com/api-docs/)  
+- **Repo Frontend** : [https://github.com/ton-utilisateur/carambar-frontend](https://github.com/ton-utilisateur/carambar-frontend)  
+- **Frontend déployé** : [https://ton-utilisateur.github.io/carambar-frontend](https://ton-utilisateur.github.io/carambar-frontend)  
+
+---
+
+## ⚙️ Installation et utilisation
+
+### Backend
+
+1. Cloner le repo backend :  
+```bash
+git clone https://github.com/ton-utilisateur/carambar-api.git

@@ -33,6 +33,7 @@ function App() {
     setShowForm(false)
     setId(false);
     setError('');
+    setAddButton(false)
     try {
       const data = await getRandomJoke();
       setJokes([data]);
