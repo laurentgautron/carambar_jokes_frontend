@@ -14,6 +14,8 @@ function App() {
 
   const handleJokes = async (ev) => {
     ev.preventDefault();
+    setShowForm(false);
+    setResearchForm(false);
     const data = await getAllJokes();
     setJokes(data);
   };
