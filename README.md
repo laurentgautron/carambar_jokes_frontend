@@ -16,10 +16,10 @@ Cette application se compose de deux parties :
 
 ## 🔗 Liens importants
 
-- **Repo Backend (API)** : [https://github.com/laurentgautron/carambar-api](https://github.com/ton-utilisateur/carambar-api)  
+- **Repo Backend (API)** : [https://github.com/laurentgautron/carambar_jokes_backend](https://github.com/laurentgautron/carambar_jokes_backend)  
 - **Documentation Swagger (API en ligne)** : [https://carambar-jokes-j6nh.onrender.com/api-docs/](https://carambar-jokes-j6nh.onrender.com/api-docs/)  
-- **Repo Frontend** : [https://github.com/laurentgautron/carambar-frontend](https://github.com/ton-utilisateur/carambar-frontend)  
-- **Frontend déployé** : [https://laurentgautron.github.io/carambar-frontend](https://ton-utilisateur.github.io/carambar-frontend)  
+- **Repo Frontend** : [https://github.com/laurentgautron/carambar_jokes_frontend](https://github.com/laurentgautron/carambar_jokes_frontend)  
+- **Frontend déployé** : [https://laurentgautron.github.io/carambar_jokes_frontend/](https://laurentgautron.github.io/carambar_jokes_frontend/)  
 
 ---
 
