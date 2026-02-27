@@ -14,6 +14,7 @@ function App() {
 
   const handleJokes = async (ev) => {
     ev.preventDefault();
+    setId(false);
     setShowForm(false);
     setResearchForm(false);
     const data = await getAllJokes();
@@ -23,6 +24,8 @@ function App() {
   const handleRandomJoke = async (ev) => {
     ev.preventDefault();
     setShowForm(false)
+    setId(false);
+    setResearchForm(false);
     const data = await getRandomJoke();
     setJokes([data]);
   };
@@ -108,7 +111,7 @@ function App() {
                   <button type='submit'>Chercher la blague</button>
                 </form>
               )   
-            ):(<ul className='jokes_list'>
+            ):(<ul className={`jokes_list ${jokes.length === 1 ? "single": ""}`}>
                 {jokes && jokes.map(joke => {
                   return (
                     <li key={joke.id}>
