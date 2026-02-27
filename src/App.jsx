@@ -87,6 +87,7 @@ function App() {
       setAnswer('');
       setQuestion('');
       setShowForm(false);
+      setAddButton(true);
     } catch (error) {
       setError(error.message);
     };  
