@@ -8,60 +8,84 @@ function App() {
   const [jokes, setJokes] = useState([]);
   const [id, setId] = useState(0);
   const [showForm, setShowForm] = useState(false);
-  const [researchForm, setResearchForm] = useState(false);
+  const [jokeForm, setJokeForm] = useState(false);
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
+  const [error, setError] = useState('')
 
   const handleJokes = async (ev) => {
     ev.preventDefault();
     setId(false);
     setShowForm(false);
-    setResearchForm(false);
-    const data = await getAllJokes();
-    setJokes(data);
+    setJokeForm(false);
+    setError('');
+    try {
+      const data = await getAllJokes();
+      setJokes(data);
+    } catch (error) {
+      setError(error.message);
+    };
   };
 
   const handleRandomJoke = async (ev) => {
     ev.preventDefault();
     setShowForm(false)
     setId(false);
-    setResearchForm(false);
-    const data = await getRandomJoke();
-    setJokes([data]);
+    setJokeForm(false);
+    setError('');
+    try {
+      const data = await getRandomJoke();
+      setJokes([data]);
+    } catch (error) {
+      setError(error.message);
+    };
   };
 
   const handleIdSubmit = async (ev) => {
     ev.preventDefault();
-    const data = await getOneJoke(id);
     setShowForm(false);
-    setJokes([data]);
+    setError('');
+    try {
+      const data = await getOneJoke(id);
+      setJokes([data]);
+    } catch (error) {
+      setJokes([]);
+      setError(error.message);
+    };
   }
 
   const handleForm = (ev) => {
     ev.preventDefault();
     setJokes([]);
     setShowForm(true);
+    setError('');
   }
 
   const handleAddJoke = (ev) => {
     ev.preventDefault();
     setId(0);
-    setResearchForm(true);
-    setShowForm(true)
+    setJokeForm(true);
+    setShowForm(true);
+    setError('');
   }
 
   const handleAddSubmit = async (ev) => {
     ev.preventDefault();
+    setError('');
     if (!setAnswer || !setQuestion) return;
-    const data = await addJoke({
+    try {
+      const data = await addJoke({
       "question": question,
       "answer": answer
-    });
-    setJokes([data]);
-    setAnswer('');
-    setQuestion('');
-    setResearchForm(false);
-    setShowForm(false);
+      });
+      setJokes([data]);
+      setAnswer('');
+      setQuestion('');
+      setJokeForm(false);
+      setShowForm(false);
+    } catch (error) {
+      setError(error.message);
+    };  
   }
 
   return (
@@ -80,8 +104,9 @@ function App() {
         <div className='responses'>
           <h2>Résultats</h2>
           <div className="res">
+            {error && <p className="error">{error}</p>}
             {showForm ? (
-              researchForm ? (
+              jokeForm ? (
                 <form className='addJoke' onSubmit={handleAddSubmit}>
                   <label htmlFor="jokeQuestion">Question:</label>
                   <input 

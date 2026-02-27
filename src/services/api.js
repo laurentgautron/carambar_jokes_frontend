@@ -12,7 +12,6 @@ export const getRandomJoke = async () => {
 export const getAllJokes = async () => {
     const response = await fetch(API_URL + '/jokes');
     const jsonResponse = await response.json();
-    console.log(response.ok)
     if (!response.ok) {
         throw new Error(`${jsonResponse.message}: ${jsonResponse.data}`);
     };
