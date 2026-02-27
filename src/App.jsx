@@ -12,6 +12,7 @@ function App() {
   const [question, setQuestion] = useState('');
   const [answer, setAnswer] = useState('');
   const [error, setError] = useState('')
+  const [addButton, setAddButton] = useState(false);
 
   const handleJokes = async (ev) => {
     ev.preventDefault();
@@ -50,6 +51,7 @@ function App() {
       const data = await getOneJoke(id);
       setShowForm(false);
       setJokes([data]);
+      setAddButton(true);
     } catch (error) {
       setJokes([]);
       setError(error.message);
@@ -84,7 +86,6 @@ function App() {
       setJokes([data]);
       setAnswer('');
       setQuestion('');
-      setJokeForm(false);
       setShowForm(false);
     } catch (error) {
       setError(error.message);
@@ -107,7 +108,9 @@ function App() {
         <div className='responses'>
           <h2>Résultats</h2>
           <div className="res">
-            {error && <p className="error">{error ? error : '\u00A0'}</p>}
+            <div className="error-container">
+              <p className="error">{error || "\u00A0"}</p>
+            </div>
             {showForm ? (
               jokeForm ? (
                 <form className='addJoke' onSubmit={handleAddSubmit}>
@@ -149,10 +152,10 @@ function App() {
                     </li>
                   );
                 })}
-                {jokes.length === 1 && jokeForm ?
-                  <button onClick={handleChooseForm}>Choisir une autre blague</button>:
-                  <button onClick={handleAddJoke}>Ajouter une autre blague</button>
-                }
+                {addButton && jokes.length === 1 && (jokeForm 
+                  ? <button onClick={handleAddJoke}>Ajouter une autre blague</button>
+                  : <button onClick={handleChooseForm}>Choisir une autre blague</button>
+                )}
                 </ul>
               )}
           </div>

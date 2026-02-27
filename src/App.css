@@ -141,4 +141,6 @@ button:hover {
 .error {
   text-align: center;
   color: red;
+  min-height: 1.2em; /* réserve de l'espace même si vide */
+  margin: 0 0 10px 0; /* espace sous le message */
 }
