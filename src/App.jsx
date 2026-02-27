@@ -56,10 +56,11 @@ function App() {
     };
   }
 
-  const handleForm = (ev) => {
+  const handleChooseForm = (ev) => {
     ev.preventDefault();
     setJokes([]);
     setShowForm(true);
+    setJokeForm(false);
     setError('');
   }
 
@@ -98,7 +99,7 @@ function App() {
           <h2>Choisissez une action</h2>
           <ul className='actions_list'>
             <li><button onClick={handleJokes}>afficher tout</button></li>
-            <li><button onClick={handleForm}>choisir une blague</button></li>
+            <li><button onClick={handleChooseForm}>choisir une blague</button></li>
             <li><button onClick={handleRandomJoke}>blague aléatoire</button></li>
             <li><button onClick={handleAddJoke}>ajouter une blague</button></li>
           </ul>
@@ -148,8 +149,9 @@ function App() {
                     </li>
                   );
                 })}
-                {jokes.length === 1 && 
-                  <button onClick={handleForm}>Choisir une autre blague ?</button>
+                {jokes.length === 1 && jokeForm ?
+                  <button onClick={handleChooseForm}>Choisir une autre blague</button>:
+                  <button onClick={handleAddJoke}>Ajouter une autre blague</button>
                 }
                 </ul>
               )}
