@@ -9,17 +9,17 @@ Bienvenue dans le projet **Carambar & Co**, une mini application web pour affich
 
 Cette application se compose de deux parties :  
 
-- **Frontend** : landing page avec un bouton pour afficher des blagues  
+- **Frontend** : landing page avec boutons pour afficher des blagues  
 - **Backend** : API REST pour gérer les blagues  
 
 ---
 
 ## 🔗 Liens importants
 
-- **Repo Backend (API)** : [https://github.com/ton-utilisateur/carambar-api](https://github.com/ton-utilisateur/carambar-api)  
+- **Repo Backend (API)** : [https://github.com/laurentgautron/carambar-api](https://github.com/ton-utilisateur/carambar-api)  
 - **Documentation Swagger (API en ligne)** : [https://carambar-jokes-j6nh.onrender.com/api-docs/](https://carambar-jokes-j6nh.onrender.com/api-docs/)  
-- **Repo Frontend** : [https://github.com/ton-utilisateur/carambar-frontend](https://github.com/ton-utilisateur/carambar-frontend)  
-- **Frontend déployé** : [https://ton-utilisateur.github.io/carambar-frontend](https://ton-utilisateur.github.io/carambar-frontend)  
+- **Repo Frontend** : [https://github.com/laurentgautron/carambar-frontend](https://github.com/ton-utilisateur/carambar-frontend)  
+- **Frontend déployé** : [https://laurentgautron.github.io/carambar-frontend](https://ton-utilisateur.github.io/carambar-frontend)  
 
 ---
 

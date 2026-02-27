@@ -101,10 +101,10 @@ function App() {
         <div className='actions'>
           <h2>Choisissez une action</h2>
           <ul className='actions_list'>
-            <li><button onClick={handleJokes}>afficher tout</button></li>
-            <li><button onClick={handleChooseForm}>choisir une blague</button></li>
-            <li><button onClick={handleRandomJoke}>blague aléatoire</button></li>
-            <li><button onClick={handleAddJoke}>ajouter une blague</button></li>
+            <li><button onClick={handleJokes}>Afficher tout</button></li>
+            <li><button onClick={handleChooseForm}>Choisir une blague</button></li>
+            <li><button onClick={handleRandomJoke}>Blague aléatoire</button></li>
+            <li><button onClick={handleAddJoke}>Ajouter une blague</button></li>
           </ul>
         </div>
         <div className='responses'>
@@ -141,7 +141,7 @@ function App() {
                     value={id}
                     onChange={(e) => setId(Number(e.target.value))}
                   />
-                  <button type='submit'>Chercher la blague</button>:
+                  <button type='submit'>Afficher la blague</button>:
                 </form>
               )   
             ):(<ul className={`jokes_list ${jokes.length === 1 ? "single": ""}`}>
